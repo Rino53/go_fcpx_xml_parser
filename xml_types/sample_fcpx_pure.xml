@@ -1,0 +1,71 @@
+<fcpxml version="1.11">
+    <library location="file:///Users/rino/Movies/HD-Lib.fcpbundle/">
+        <event name="HD-Event" uid="78F03283-56EB-4490-B279-19496CFA6C34">
+            <project name="fix-tutorial" uid="4D2E38EB-7709-4348-82F1-E085DA6FA259" modDate="2024-09-10 11:54:37 +0200">
+                <sequence format="r1" duration="149865716/24000s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+                    <spine>
+                        <asset-clip ref="r2" offset="0s" name="Video-20221222_082021-Meeting Recording" duration="9972963/24000s" format="r3" tcFormat="NDF" audioRole="dialogue">
+                            <conform-rate scaleEnabled="0"/>
+                            <keyword start="0s" duration="4155625/10000s" value="2022.fix.connector.videos.tutorial"/>
+                            <audio-channel-source srcCh="1" role="dialogue.dialogue-1"/>
+                        </asset-clip>
+                        <asset-clip ref="r4" offset="9972963/24000s" name="Video-20221222_084017-Meeting Recording" duration="28430402/24000s" format="r3" tcFormat="NDF" audioRole="dialogue">
+                            <conform-rate scaleEnabled="0"/>
+                            <keyword start="0s" duration="11846250/10000s" value="2022.fix.connector.videos.tutorial"/>
+                            <chapter-marker start="0s" duration="1001/24000s" value="06:55:03 = Chapter 2" posterOffset="11/16s"/>
+                            <chapter-marker start="271271/480s" duration="1001/24000s" value="16:19:17 = Chapter 2-3" posterOffset="11/16s"/>
+                            <audio-channel-source srcCh="1" role="dialogue.dialogue-1"/>
+                        </asset-clip>
+                        <asset-clip ref="r5" offset="38403365/24000s" name="Video-20221222_085109-Meeting Recording" duration="15470455/24000s" format="r3" tcFormat="NDF" audioRole="dialogue">
+                            <conform-rate scaleEnabled="0"/>
+                            <keyword start="0s" duration="6446250/10000s" value="2022.fix.connector.videos.tutorial"/>
+                            <chapter-marker start="0s" duration="1001/24000s" value="26:38:13 = Chapter 3" posterOffset="11/16s"/>
+                            <chapter-marker start="531531/2000s" duration="1001/24000s" value="31:04:01 = Chapter 3-4" posterOffset="11/16s"/>
+                            <audio-channel-source srcCh="1" role="dialogue.dialogue-1"/>
+                        </asset-clip>
+                        <asset-clip ref="r6" offset="53873820/24000s" name="Video-20221222_085638-Meeting Recording" duration="7701694/24000s" format="r3" tcFormat="NDF" audioRole="dialogue">
+                            <conform-rate scaleEnabled="0"/>
+                            <chapter-marker start="0s" duration="1001/24000s" value="Chapter 4" posterOffset="11/16s"/>
+                            <keyword start="0s" duration="3209375/10000s" value="2022.fix.connector.videos.tutorial"/>
+                            <audio-channel-source srcCh="1" role="dialogue.dialogue-1"/>
+                        </asset-clip>
+                        <asset-clip ref="r7" offset="61575514/24000s" name="Video-20221222_085827-Meeting Recording" duration="2459457/24000s" format="r3" tcFormat="NDF" audioRole="dialogue">
+                            <conform-rate scaleEnabled="0"/>
+                            <keyword start="0s" duration="1025000/10000s" value="2022.fix.connector.videos.tutorial"/>
+                            <chapter-marker start="0s" duration="1001/24000s" value="Chapter 5" posterOffset="11/16s"/>
+                            <audio-channel-source srcCh="1" role="dialogue.dialogue-1"/>
+                        </asset-clip>
+                        <asset-clip ref="r8" offset="64034971/24000s" name="Video-20221222_094220-Meeting Recording" duration="58465407/24000s" format="r3" tcFormat="NDF" audioRole="dialogue">
+                            <conform-rate scaleEnabled="0"/>
+                            <keyword start="0s" duration="24360625/10000s" value="2022.fix.connector.videos.tutorial"/>
+                            <chapter-marker start="0s" duration="1001/24000s" value="Chapter 6" posterOffset="11/16s"/>
+                            <audio-channel-source srcCh="1" role="dialogue.dialogue-1"/>
+                        </asset-clip>
+                        <asset-clip ref="r9" offset="122500378/24000s" name="Video-20221222_100100-Meeting Recording" duration="27365338/24000s" format="r3" tcFormat="NDF" audioRole="dialogue">
+                            <conform-rate scaleEnabled="0"/>
+                            <chapter-marker start="0s" duration="1001/24000s" value="Chapter 7" posterOffset="11/16s"/>
+                            <keyword start="0s" duration="11402500/10000s" value="2022.fix.connector.videos.tutorial"/>
+                            <audio-channel-source srcCh="1" role="dialogue.dialogue-1"/>
+                        </asset-clip>
+                    </spine>
+                </sequence>
+            </project>
+        </event>
+        <smart-collection name="Projects" match="all">
+            <match-clip rule="is" type="project"/>
+        </smart-collection>
+        <smart-collection name="All Video" match="any">
+            <match-media rule="is" type="videoOnly"/>
+            <match-media rule="is" type="videoWithAudio"/>
+        </smart-collection>
+        <smart-collection name="Audio Only" match="all">
+            <match-media rule="is" type="audioOnly"/>
+        </smart-collection>
+        <smart-collection name="Stills" match="all">
+            <match-media rule="is" type="stills"/>
+        </smart-collection>
+        <smart-collection name="Favorites" match="all">
+            <match-ratings value="favorites"/>
+        </smart-collection>
+    </library>
+</fcpxml>

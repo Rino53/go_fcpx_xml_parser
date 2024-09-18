@@ -1,0 +1,84 @@
+Based on your description, you're building what is a unix-style executable. On OS X, those will always launch inside of a terminal window. The choices that you have on OS X are:
+
+Run as a daemon as described in the above-linked post
+Run in Terminal as a unix executable
+Create a minimal OS X application wrapper and run as an OS X Application
+In most cases, you can create a wrapper for a unix-style executable by creating the appropriate Bundle using the instructions from Apple's Bundle Programming Guide (skip over the iOS stuff and look at the Mac bundle information).
+
+The basic directory structure is:
+
+MyApp.app/
+  Contents/
+    Info.plist
+  MacOS/
+    executable
+  Resources/
+    MyApp.icns
+Your unmodified executable can go in the MacOS directory, and you'll need to set up the following keys in the Info.plist using a plist editing tool or editor:
+
+CFBundleIdentifier - the id of your app in reverse-dns notation (com.mycompany.myapp)
+CFBundleDisplayName - the name of your app in human-readable form (MyApp)
+CFBundleName - the short name of the app (usually the same as your app and executable name)
+CFBundleVersion - your version # in X.Y[.Z] form
+CFBundlePackageType - the package type, which should be APPL for applications
+CFBundleExecutable - the name of your executable
+CFBundleSignature - old-school Apple signature (4 character code that should theoretically be registered with apple)
+A minimal plist would look like this:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDisplayName</key>
+    <string>MyApp</string>
+    <key>CFBundleExecutable</key>
+    <string>a.out</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.mycompany.myapp</string>
+    <key>CFBundleName</key>
+    <string>MyApp</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleSignature</key>
+    <string>FOOZ</string>
+    <key>CFBundleVersion</key>
+    <string>1.0</string>
+</dict>
+</plist>
+(The above example uses a.out as the executable, which would be located in MyApp.app/Contents/MacOS/a.out)
+
+The icon resources can be left out if you don't care about the icon, and the default application icon will be used.
+
+
+
+https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html#//apple_ref/doc/uid/20001119-110730
+
+MyApp.app/
+   Contents/
+      Info.plist
+      MacOS/
+         MyApp
+      Resources/
+         Hand.tiff
+         MyApp.icns
+         WaterSounds/
+            Water1.aiff
+            Water2.aiff
+         en.lproj/
+            MyApp.nib
+            bird.tiff
+            Bye.txt
+            InfoPlist.strings
+            Localizable.strings
+            CitySounds/
+               city1.aiff
+               city2.aiff
+         jp.lproj/
+            MyApp.nib
+            bird.tiff
+            Bye.txt
+            InfoPlist.strings
+            Localizable.strings
+            CitySounds/
+               city1.aiff
+               city2.aiff

@@ -1,0 +1,40 @@
+Well, finally I decided to redesign the project structure.
+
+main.go
+routes
+    routes.go
+controllers
+    factors.go
+models
+    factors.go
+main.go:
+
+import (
+    "your_project_name/routes"
+)
+
+func main()  {
+    // code
+    router := mux.NewRouter()
+    routes.Use(router)
+    // code
+}
+routes/routes.go:
+
+package routes
+
+import (
+    "github.com/gorilla/mux"
+    "your_application_name/controllers"
+)
+
+func Use(router *mux.Router) {
+    router.HandleFunc("/api/factors", controllers.GetFactors).Methods("GET")
+}
+controllers/factors.go:
+
+package controllers
+
+var GetFactors = func(res http.ResponseWriter, req *http.Request) {
+    // code
+}
